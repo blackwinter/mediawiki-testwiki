@@ -1,0 +1,26 @@
+FROM debian:jessie
+
+MAINTAINER <%= config.maintainer %>
+
+ENV DEBIAN_FRONTEND noninteractive
+RUN sed -i s/101/0/ /usr/sbin/policy-rc.d
+RUN apt-get -qq update && apt-get -qqy install\
+ nginx-light sqlite3 curl php5-fpm php5-gd php5-intl php5-sqlite
+
+ADD nginx.conf /etc/nginx/
+ADD mediawiki-start /usr/local/sbin/
+ADD php-fpm-pool-www.conf /etc/php5/fpm/pool.d/www.conf
+
+RUN curl -sSL <%= config.download_url %> | tar xzf - -C <%= config.volume %> &&\
+ chown -R <%= config.process_user %> <%= config.install_path %>
+
+ADD LocalSettings.php <%= config.install_path %>/
+ADD <%= config.dump_file %> <%= config.data_path %>/
+
+RUN sqlite3 <%= config.database_path %> < <%= config.dump_path %> &&\
+ chown -R <%= config.process_user %> <%= config.data_path %>
+
+VOLUME <%= config.volume %>
+EXPOSE <%= config.port %>
+
+CMD ["/usr/local/sbin/mediawiki-start"]

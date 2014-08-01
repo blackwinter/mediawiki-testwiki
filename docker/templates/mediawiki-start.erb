@@ -1,0 +1,8 @@
+#! /bin/sh
+
+settings="<%= config.install_path %>/LocalSettings.php"
+[ -s "$settings" ] || rm -f "$settings"
+
+invoke-rc.d php5-fpm start
+
+exec /usr/sbin/nginx

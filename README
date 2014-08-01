@@ -1,0 +1,41 @@
+= mediawiki-testwiki - MediaWiki test wikis based on Docker
+
+== VERSION
+
+This documentation refers to mediawiki-testwiki version 0.0.0.
+
+
+== DESCRIPTION
+
+Provides pre-configured MediaWiki wikis as Docker images as well as an RSpec
+adapter to integrate with your specs (see MediaWiki::TestWiki::RSpecAdapter).
+
+
+== LINKS
+
+Documentation:: https://blackwinter.github.com/mediawiki-testwiki
+Source code::   https://github.com/blackwinter/mediawiki-testwiki
+RubyGem::       https://rubygems.org/gems/mediawiki-testwiki
+
+
+== AUTHORS
+
+* Jens Wille <mailto:jens.wille@gmail.com>
+
+
+== LICENSE AND COPYRIGHT
+
+Copyright (C) 2014 Jens Wille
+
+mediawiki-testwiki is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+mediawiki-testwiki is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public
+License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with mediawiki-testwiki. If not, see <http://www.gnu.org/licenses/>.

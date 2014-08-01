@@ -1,0 +1,1 @@
+require 'media_wiki/test_wiki/rake_tasks'
