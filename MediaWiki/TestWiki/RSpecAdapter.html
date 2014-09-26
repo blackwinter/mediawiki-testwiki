@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module MediaWiki::TestWiki::RSpecAdapter - mediawiki-testwiki Application documentation (v0.0.1)</title>
+
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="RSpecAdapter/Helpers.html">MediaWiki::TestWiki::RSpecAdapter::Helpers</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-enhance">#enhance</a>
+    
+    <li ><a href="#method-i-extended">#extended</a>
+    
+    <li ><a href="#method-i-init_config">#init_config</a>
+    
+    <li ><a href="#method-i-init_proxy">#init_proxy</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-MediaWiki::TestWiki::RSpecAdapter">
+  <h1 id="module-MediaWiki::TestWiki::RSpecAdapter" class="module">
+    module MediaWiki::TestWiki::RSpecAdapter
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="PROXY_NAME">PROXY_NAME
+        
+        <dd>
+        
+      
+        <dt id="Proxy">Proxy
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-enhance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enhance</span><span
+            class="method-args">(config, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="enhance-source">
+            <pre><span class="ruby-comment"># File lib/media_wiki/test_wiki/rspec_adapter.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">enhance</span>(<span class="ruby-identifier">config</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-constant">PROXY_NAME</span>)
+  <span class="ruby-identifier">init_config</span>(<span class="ruby-constant">Proxy</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">config</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">config</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-extended" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extended</span><span
+            class="method-args">(base)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extended-source">
+            <pre><span class="ruby-comment"># File lib/media_wiki/test_wiki/rspec_adapter.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extended</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">init_proxy</span>(<span class="ruby-constant">RSpec</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">send</span>(<span class="ruby-constant">PROXY_NAME</span>), <span class="ruby-identifier">base</span>.<span class="ruby-identifier">metadata</span>)
+  <span class="ruby-identifier">base</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-init_config" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init_config</span><span
+            class="method-args">(mw, config, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="init_config-source">
+            <pre><span class="ruby-comment"># File lib/media_wiki/test_wiki/rspec_adapter.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init_config</span>(<span class="ruby-identifier">mw</span>, <span class="ruby-identifier">config</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">add_setting</span> <span class="ruby-constant">PROXY_NAME</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-identifier">mw</span>
+
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">after</span>   <span class="ruby-value">:context</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> <span class="ruby-keyword">do</span> <span class="ruby-identifier">mw</span>.<span class="ruby-identifier">pool</span>.<span class="ruby-identifier">clean</span> <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">extend</span>  <span class="ruby-keyword">self</span>,     <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">include</span> <span class="ruby-constant">Helpers</span>,  <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>
+
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">filter_run_excluding</span> <span class="ruby-identifier">required_version</span><span class="ruby-operator">:</span> <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">version</span> = <span class="ruby-identifier">mw</span>.<span class="ruby-identifier">version</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span>
+      <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Array</span>(<span class="ruby-identifier">value</span>)).<span class="ruby-identifier">satisfied_by?</span>(<span class="ruby-identifier">version</span>)
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-init_proxy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init_proxy</span><span
+            class="method-args">(mw, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="init_proxy-source">
+            <pre><span class="ruby-comment"># File lib/media_wiki/test_wiki/rspec_adapter.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init_proxy</span>(<span class="ruby-identifier">mw</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">version</span>, <span class="ruby-identifier">size</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-value">:version</span>, <span class="ruby-value">:pool_size</span>)
+
+  <span class="ruby-identifier">mw</span>.<span class="ruby-identifier">pool</span> = <span class="ruby-constant">DockerPool</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">size</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">true</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">mw</span>.<span class="ruby-identifier">version</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">config</span>.<span class="ruby-identifier">version</span> = <span class="ruby-identifier">version</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">version</span>
+    <span class="ruby-identifier">mw</span>.<span class="ruby-identifier">config</span> = { <span class="ruby-identifier">username</span><span class="ruby-operator">:</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">username</span>, <span class="ruby-identifier">password</span><span class="ruby-operator">:</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">password</span> }
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
