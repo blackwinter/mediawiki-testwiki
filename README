@@ -13,6 +13,7 @@ adapter to integrate with your specs (see MediaWiki::TestWiki::RSpecAdapter).
 
 == LINKS
 
+Docker images:: https://registry.hub.docker.com/u/blackwinter/mediawiki-testwiki
 Documentation:: https://blackwinter.github.com/mediawiki-testwiki
 Source code::   https://github.com/blackwinter/mediawiki-testwiki
 RubyGem::       https://rubygems.org/gems/mediawiki-testwiki
