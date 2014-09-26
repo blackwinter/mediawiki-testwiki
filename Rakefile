@@ -13,11 +13,11 @@ begin
       email:        %q{jens.wille@gmail.com},
       license:      %q{AGPL-3.0},
       homepage:     :blackwinter,
-      dependencies: { docker_helper: '~> 0.0.2' },
+      dependencies: { docker_helper: ['~> 0.0', '>= 0.0.2'] },
       requirements: %w[docker.io sqlite3\ (development)],
       extra_files:  FileList['lib/**/*.rake'].to_a,
 
-      development_dependencies: { mechanize: '~> 2.7.3' },
+      development_dependencies: { mechanize: '~> 2.7' },
 
       required_ruby_version: '>= 1.9.3'
     }
