@@ -16,7 +16,7 @@ namespace :setup do
     broken, args = broken_version?(ENV['STRICTVERSION']),
       ["#{url}/mw-config/", config.data_path, cfg]
 
-    verified_version?(ENV['STRICTVERSION']) ?
+    !verified_version?(ENV['STRICTVERSION']) ?
       broken ? setup_broken(cfg) : setup_manual(*args << nil << true) :
     begin
       require 'mechanize'
