@@ -1,4 +1,4 @@
-require File.expand_path(%q{../lib/media_wiki/test_wiki/version}, __FILE__)
+require_relative 'lib/media_wiki/test_wiki/version'
 
 begin
   require 'hen'

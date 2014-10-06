@@ -5,7 +5,7 @@
 == 0.0.2 [2014-09-29]
 
 * Fixed <tt>setup:config</tt> task.
-* fixed <tt>nginx.conf</tt> file.
+* Fixed <tt>nginx.conf</tt> file.
 * Fixed gem dependencies.
 * Updated README.
 
