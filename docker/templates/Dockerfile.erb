@@ -5,7 +5,7 @@ MAINTAINER <%= config.maintainer %>
 ENV DEBIAN_FRONTEND noninteractive
 RUN sed -i s/101/0/ /usr/sbin/policy-rc.d
 RUN apt-get -qq update && apt-get -qqy install\
- nginx-light sqlite3 curl php5-fpm php5-gd php5-intl php5-sqlite
+ curl nginx-light php5-fpm php5-gd php5-intl php5-sqlite sqlite3
 
 ADD nginx.conf /etc/nginx/
 ADD mediawiki-start /usr/local/sbin/
