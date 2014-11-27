@@ -88,7 +88,7 @@ module MediaWiki
       # Version numbers for which configuration instructions have been verified
       # (Must match version numbers from #download_base)
       attribute :verified_versions do
-        %w[1.23.7 1.22.14 1.21.11 1.20.8 1.19.22 1.18.6 1.17.5]
+        %w[1.24.0 1.23.7 1.22.14 1.21.11 1.20.8 1.19.22 1.18.6 1.17.5]
       end
 
       ##

@@ -184,8 +184,11 @@ NOTE: Install the `mechanize' gem to automate this process. (#{err})
           form.config_wgSitename = config.sitename
           form.config__AdminName = config.username
 
-          form.config__AdminPassword  = config.password
-          form.config__AdminPassword2 = config.password
+          form.fields.each { |field|
+            if field.name.start_with?('config__AdminPassword')
+              field.value = config.password
+            end
+          }
         }
 
         2.times { continue.() }
