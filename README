@@ -11,9 +11,16 @@ Provides pre-configured MediaWiki wikis as Docker images as well as an RSpec
 adapter to integrate with your specs (see MediaWiki::TestWiki::RSpecAdapter).
 
 
+== USAGE
+
+0. To _use_ the Docker images, point Docker at +blackwinter/mediawiki-testwiki+ (and possibly a {specific version}[https://hub.docker.com/r/blackwinter/mediawiki-testwiki/tags]).
+0. To _test_ your project against a MediaWiki instance using RSpec, use the MediaWiki::TestWiki::RSpecAdapter; see mediawiki-gateway[https://github.com/jpatokal/mediawiki-gateway/blob/27ef552/spec/spec_helper.rb#L24-L32] for an example.
+0. To _build_ new Docker images, e.g. for different MediaWiki versions, use the Rake tasks provided in the +docker/+ directory: <tt>rake build VERSION=x.y.z</tt>.
+
+
 == LINKS
 
-Docker images:: https://registry.hub.docker.com/u/blackwinter/mediawiki-testwiki
+Docker images:: https://hub.docker.com/r/blackwinter/mediawiki-testwiki
 Documentation:: https://blackwinter.github.com/mediawiki-testwiki
 Source code::   https://github.com/blackwinter/mediawiki-testwiki
 RubyGem::       https://rubygems.org/gems/mediawiki-testwiki
