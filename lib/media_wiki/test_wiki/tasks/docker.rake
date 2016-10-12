@@ -2,7 +2,7 @@ namespace :docker do
 
   docker_tasks docker_container_name, image = docker_image_name
 
-  task :build => config.config_files do
+  task build: config.config_files do
     docker_build image
   end
 

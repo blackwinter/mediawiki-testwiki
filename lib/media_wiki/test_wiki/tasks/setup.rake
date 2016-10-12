@@ -6,11 +6,11 @@ namespace :setup do
     touch config.config_files
   end
 
-  task :build => [:config_files, *config.build_files] do
+  task build: [:config_files, *config.build_files] do
     docker_build image
   end
 
-  task :config => :start do
+  task config: :start do
     url, cfg = docker_url(name), config.config_files.first
 
     broken, args = broken_version?(ENV['STRICTVERSION']),
@@ -29,7 +29,7 @@ namespace :setup do
     fix_config(cfg, File.basename(url))
   end
 
-  task :dump => :config do
+  task dump: :config do
     path = File.join(docker_volume(name),
       config.data_directory, config.database_file)
 
@@ -39,8 +39,8 @@ namespace :setup do
     File.write(config.config_files.last, IO.popen(args, &:read).chomp)
   end
 
-  task :setup  => [:build, :config]
+  task setup: [:build, :config]
 
-  task :export => [:dump, :clean]
+  task export: [:dump, :clean]
 
 end
